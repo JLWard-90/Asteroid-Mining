@@ -17,30 +17,63 @@ MonoBehaviour:
   - enabled: 1
     useFirstLayerAsMask: 0
     noiseSettings:
-      nLayers: 5
-      persistence: 0.5
-      strength: 0.1
-      baseRoughness: 1
-      roughness: 1.51
-      centre: {x: 0, y: 0, z: 0}
-      minValue: 1
+      simpleNoiseSettings:
+        nLayers: 5
+        persistence: 0.5
+        strength: 0.1
+        baseRoughness: 1
+        roughness: 1.9
+        centre: {x: 0, y: 0, z: 0}
+        minValue: 1
+      rigidNoiseSettings:
+        nLayers: 1
+        persistence: 0.5
+        strength: 1
+        baseRoughness: 1
+        roughness: 2
+        centre: {x: 0, y: 0, z: 0}
+        minValue: 0
+        weightMultiplier: 0.8
+      filterType: 0
   - enabled: 1
     useFirstLayerAsMask: 1
     noiseSettings:
-      nLayers: 8
-      persistence: 0.36
-      strength: 5.36
-      baseRoughness: 1
-      roughness: 5.15
-      centre: {x: -0.58, y: 0.66, z: 0}
-      minValue: 0.97
-  - enabled: 0
-    useFirstLayerAsMask: 0
+      simpleNoiseSettings:
+        nLayers: 5
+        persistence: 0.7
+        strength: 1
+        baseRoughness: 1
+        roughness: 2.4
+        centre: {x: 0, y: 1.8, z: 0}
+        minValue: 1
+      rigidNoiseSettings:
+        nLayers: 1
+        persistence: 0.5
+        strength: 1
+        baseRoughness: 1
+        roughness: 2
+        centre: {x: 0, y: 0, z: 0}
+        minValue: 0
+        weightMultiplier: 0.8
+      filterType: 0
+  - enabled: 1
+    useFirstLayerAsMask: 1
     noiseSettings:
-      nLayers: 0
-      persistence: 0
-      strength: 0
-      baseRoughness: 0
-      roughness: 0
-      centre: {x: 0, y: 0, z: 0}
-      minValue: 0
+      simpleNoiseSettings:
+        nLayers: 5
+        persistence: 0.5
+        strength: 2
+        baseRoughness: 1
+        roughness: 2
+        centre: {x: 0, y: 0, z: 0}
+        minValue: 1
+      rigidNoiseSettings:
+        nLayers: 5
+        persistence: 0.5
+        strength: 2
+        baseRoughness: 1
+        roughness: 10
+        centre: {x: 0, y: 0, z: 0}
+        minValue: 0.4
+        weightMultiplier: 0.8
+      filterType: 1

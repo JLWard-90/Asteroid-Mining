@@ -5,16 +5,16 @@ using UnityEngine;
 public class ShapeGenerator
 {
     ShapeSettings settings;
-    NoiseFilter[] noiseFilters;
+    iNoiseFilter[] simpleNoiseFilters;
     public ShapeGenerator(ShapeSettings shapeSettings)
     {
         this.settings = shapeSettings;
         if(settings.noiseLayers != null)
         {
-            noiseFilters = new NoiseFilter[settings.noiseLayers.Length];//NoiseFilter(settings.noiseSettings);
-            for (int i=0; i < noiseFilters.Length; i++)
+            simpleNoiseFilters = new iNoiseFilter[settings.noiseLayers.Length];//SimpleNoiseFilter(settings.noiseSettings);
+            for (int i=0; i < simpleNoiseFilters.Length; i++)
             {
-                noiseFilters[i] = new NoiseFilter(settings.noiseLayers[i].noiseSettings);
+                simpleNoiseFilters[i] = NoiseFilterFactory.CreateNoiseFilter(settings.noiseLayers[i].noiseSettings);
             }
         }
         else
@@ -25,23 +25,23 @@ public class ShapeGenerator
 
     public Vector3 CalculatePointOnPlanet(Vector3 pointOnUnitSphere)
     {
-        float elevation = 0; //noiseFilter.evaluate(pointOnUnitSphere);
+        float elevation = 0; //simpleNoiseFilter.evaluate(pointOnUnitSphere);
         float firstLayerVal = 0;
-        if (noiseFilters.Length > 0)
+        if (simpleNoiseFilters.Length > 0)
         {
-            firstLayerVal = noiseFilters[0].evaluate(pointOnUnitSphere);
+            firstLayerVal = simpleNoiseFilters[0].evaluate(pointOnUnitSphere);
             if (settings.noiseLayers[0].enabled)
             {
                 elevation = firstLayerVal;
             }
         }
 
-        for (int i = 1; i < noiseFilters.Length; i++)
+        for (int i = 1; i < simpleNoiseFilters.Length; i++)
         {
             if (settings.noiseLayers[i].enabled)
             {
                 float mask = (settings.noiseLayers[i].useFirstLayerAsMask)? firstLayerVal : 1;
-                elevation += noiseFilters[i].evaluate(pointOnUnitSphere) * mask;
+                elevation += simpleNoiseFilters[i].evaluate(pointOnUnitSphere) * mask;
             }
         }
         return pointOnUnitSphere * settings.planetRadius * (1+elevation);
