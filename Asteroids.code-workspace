@@ -2,6 +2,9 @@
 	"folders": [
 		{
 			"path": "Assets/Scripts"
+		},
+		{
+			"path": "Assets/Editor"
 		}
 	]
 }

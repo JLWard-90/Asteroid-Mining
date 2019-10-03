@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Planet : MonoBehaviour
 {
+    public bool autoUpdate = true;
     [Range(2,256)] //256**2 is about the maximum number of vertices a mesh can have
     public int resolution = 10; 
     [SerializeField, HideInInspector] //Serialize so it saves in the editor but hide it from showing up in the inspector window
@@ -12,14 +13,44 @@ public class Planet : MonoBehaviour
 
     Vector3[] directions = {Vector3.up,Vector3.down,Vector3.forward,Vector3.back,Vector3.left,Vector3.right}; //All of the cardinal directions
 
-    private void OnValidate() //Update every time we change something in the editor
+    public ShapeSettings shapeSettings;
+    public ColourSettings colourSettings;
+
+    ShapeGenerator shapeGenerator;
+
+    [HideInInspector]
+    public bool shapeSettingsFoldout;
+    [HideInInspector]
+    public bool colourSettingsFoldout;
+
+    public void GeneratePlanet()
     {
         Initialise();
         GenerateMesh();
+        GenerateColours();
+    }
+
+    public void OnColourSettingsUpdated()
+    {
+        if(autoUpdate)
+        {
+            Initialise();
+            GenerateColours();
+        }
+    }
+
+    public void OnShapeSettingsUpdated()
+    {
+        if(autoUpdate)
+        {
+            Initialise();
+            GenerateMesh();
+        }
     }
 
     void Initialise()
     {
+        shapeGenerator = new ShapeGenerator(shapeSettings); 
         if(meshFilters == null || meshFilters.Length == 0)
         {
             meshFilters = new MeshFilter[6];
@@ -39,7 +70,7 @@ public class Planet : MonoBehaviour
             }
             
 
-            terrainFaces[i] = new TerrainFace(meshFilters[i].sharedMesh, resolution, directions[i]);
+            terrainFaces[i] = new TerrainFace(shapeGenerator, meshFilters[i].sharedMesh, resolution, directions[i]);
         }
     }
 
@@ -51,5 +82,13 @@ public class Planet : MonoBehaviour
         }
     }
 
+    void GenerateColours()
+    {
+        foreach(MeshFilter m in meshFilters)
+        {
+            m.GetComponent<MeshRenderer>().sharedMaterial.color = colourSettings.planetColour;
+        }
+    }
+    
     
 }

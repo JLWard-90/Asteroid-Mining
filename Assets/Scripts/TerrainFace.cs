@@ -9,9 +9,11 @@ public class TerrainFace
     Vector3 localUp; //Which way it is facing
     Vector3 axisA; //axis perpendicular to localUp;
     Vector3 axisB; //axis perpendicular to localUp;
+    ShapeGenerator shapeGenerator;
 
-    public TerrainFace(Mesh mesh, int resolution, Vector3 localUp) //This is the constructor for the TerrainFace 
+    public TerrainFace(ShapeGenerator shapeGenerator,Mesh mesh, int resolution, Vector3 localUp) //This is the constructor for the TerrainFace 
     {
+        this.shapeGenerator = shapeGenerator;
         this.mesh = mesh;
         this.resolution = resolution;
         this.localUp = localUp;
@@ -33,7 +35,7 @@ public class TerrainFace
                 Vector2 percent = new Vector2(x,y) / (resolution-1); //Tells us how far through the loop we are
                 Vector3 pointOnUnitCube = localUp + (percent.x-.5f)*2*axisA + (percent.y-.5f)*2*axisB;
                 Vector3 pointOnUnitSphere = pointOnUnitCube.normalized;//used to go from a cube to a sphere
-                vertices[i] = pointOnUnitSphere;
+                vertices[i] = shapeGenerator.CalculatePointOnPlanet(pointOnUnitSphere);
 
                 if(x!=resolution-1 && y!=resolution-1) //vertex is not along the right or bottom edges
                 {
