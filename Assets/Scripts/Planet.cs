@@ -16,7 +16,8 @@ public class Planet : MonoBehaviour
     public ShapeSettings shapeSettings;
     public ColourSettings colourSettings;
 
-    ShapeGenerator shapeGenerator;
+    ShapeGenerator shapeGenerator = new ShapeGenerator();
+    ColourGenerator colourGenerator = new ColourGenerator();
 
     [HideInInspector]
     public bool shapeSettingsFoldout;
@@ -53,7 +54,8 @@ public class Planet : MonoBehaviour
 
     void Initialise()
     {
-        shapeGenerator = new ShapeGenerator(shapeSettings); 
+        shapeGenerator.UpdateSettings(shapeSettings);
+        colourGenerator.UpdateSettings(colourSettings);
         if(meshFilters == null || meshFilters.Length == 0)
         {
             meshFilters = new MeshFilter[6];
@@ -67,10 +69,11 @@ public class Planet : MonoBehaviour
                 GameObject meshObject = new GameObject("mesh");
                 meshObject.transform.parent = transform; //Add the new meshobject to current transform
 
-                meshObject.AddComponent<MeshRenderer>().sharedMaterial = new Material(Shader.Find("Standard"));
+                meshObject.AddComponent<MeshRenderer>();
                 meshFilters[i] = meshObject.AddComponent<MeshFilter>();
                 meshFilters[i].sharedMesh = new Mesh();
             }
+            meshFilters[i].GetComponent<MeshRenderer>().sharedMaterial = colourSettings.planetMaterial;
             
 
             terrainFaces[i] = new TerrainFace(shapeGenerator, meshFilters[i].sharedMesh, resolution, directions[i]);
@@ -88,18 +91,13 @@ public class Planet : MonoBehaviour
                 terrainFaces[i].ConstructMesh();
             }
         }
-        /*foreach(TerrainFace terrainFace in terrainFaces)
-        {
-            terrainFace.ConstructMesh();
-        }*/
+
+        colourGenerator.UpdateElevation(shapeGenerator.elevationMinMax);
     }
 
     void GenerateColours()
     {
-        foreach(MeshFilter m in meshFilters)
-        {
-            m.GetComponent<MeshRenderer>().sharedMaterial.color = colourSettings.planetColour;
-        }
+        colourGenerator.UpdateColours();
     }
     
     
