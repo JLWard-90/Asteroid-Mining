@@ -27,6 +27,8 @@ public class TerrainFace
         Vector3[] vertices = new Vector3[resolution*resolution]; //Store all vertices
         int[] triangles = new int[(resolution-1)*(resolution-1)*6]; //Int array to indeces of all triangles. size = resolution-1 squared(number of squares) * 2 (number of triangles per square) * 3 (number of vertices per triangle)
         int triIndex = 0;
+        Vector2[] uv = mesh.uv;
+
         for (int y=0; y < resolution; y++)
         {
             for (int x=0; x<resolution; x++) //Iterate over entire face
@@ -55,5 +57,24 @@ public class TerrainFace
         mesh.vertices = vertices;
         mesh.triangles = triangles;
         mesh.RecalculateNormals();
+        mesh.uv = uv;
+    }
+
+    public void UpdateUVs(ColourGenerator colourGenerator)
+    {
+        Vector2[] uv = new Vector2[resolution * resolution];
+        for (int y = 0; y < resolution; y++)
+        {
+            for (int x = 0; x < resolution; x++) //Iterate over entire face
+            {
+                int i = x + y * resolution;
+                Vector2 percent = new Vector2(x, y) / (resolution - 1); //Tells us how far through the loop we are
+                Vector3 pointOnUnitCube = localUp + (percent.x - .5f) * 2 * axisA + (percent.y - .5f) * 2 * axisB;
+                Vector3 pointOnUnitSphere = pointOnUnitCube.normalized;//used to go from a cube to a sphere
+
+                uv[i] = new Vector2(colourGenerator.BiomePercentFromPoint(pointOnUnitSphere),0);
+            }
+        }
+        mesh.uv = uv;
     }
 }
