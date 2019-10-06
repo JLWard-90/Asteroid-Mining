@@ -27,6 +27,7 @@ public class TerrainFace
         Vector3[] vertices = new Vector3[resolution*resolution]; //Store all vertices
         int[] triangles = new int[(resolution-1)*(resolution-1)*6]; //Int array to indeces of all triangles. size = resolution-1 squared(number of squares) * 2 (number of triangles per square) * 3 (number of vertices per triangle)
         int triIndex = 0;
+        //Debug.Log(mesh); //mesh is setto null for some reason...
         Vector2[] uv = (mesh.uv.Length == vertices.Length)?mesh.uv:new Vector2[vertices.Length];
 
         for (int y=0; y < resolution; y++)

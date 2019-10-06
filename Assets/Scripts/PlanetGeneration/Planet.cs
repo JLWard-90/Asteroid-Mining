@@ -73,8 +73,11 @@ public class Planet : MonoBehaviour
                 meshFilters[i] = meshObject.AddComponent<MeshFilter>();
                 meshFilters[i].sharedMesh = new Mesh();
             }
+            if(meshFilters[i].sharedMesh == null)
+            {
+                meshFilters[i].sharedMesh = new Mesh();
+            }
             meshFilters[i].GetComponent<MeshRenderer>().sharedMaterial = colourSettings.planetMaterial;
-            
 
             terrainFaces[i] = new TerrainFace(shapeGenerator, meshFilters[i].sharedMesh, resolution, directions[i]);
             bool renderFace = faceRenderMask == FaceRenderMask.All || (int) faceRenderMask - 1 == i;

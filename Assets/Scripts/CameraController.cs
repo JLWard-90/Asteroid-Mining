@@ -12,7 +12,7 @@ public class CameraController : MonoBehaviour
     Vector2 zoomMinMax;
 
     [SerializeField]
-    GameObject focusPlanet;
+    public GameObject focusPlanet;
 
     public float zoomDist = 3;
 
