@@ -25,7 +25,7 @@ public class SimpleNoiseFilter : iNoiseFilter
             frequency *= settings.roughness; //roughness > 1 -> frequency of noise increases with each layer
             amplitude *= settings.persistence; //persistence < 1 -> amplitude decreases with each layer
         }
-        noiseValue = Mathf.Max(0, noiseValue-settings.minValue);
+        noiseValue = noiseValue-settings.minValue;
         return noiseValue * settings.strength;
     }
 }

@@ -26,7 +26,9 @@ public class ShapeGenerator
         elevationMinMax = new MinMax();
     }
 
-    public Vector3 CalculatePointOnPlanet(Vector3 pointOnUnitSphere)
+
+
+    public float CalculateUnscaledElevation(Vector3 pointOnUnitSphere)
     {
         float elevation = 0; //simpleNoiseFilter.evaluate(pointOnUnitSphere);
         float firstLayerVal = 0;
@@ -47,11 +49,14 @@ public class ShapeGenerator
                 elevation += simpleNoiseFilters[i].evaluate(pointOnUnitSphere) * mask;
             }
         }
+        elevationMinMax.AddValue(elevation);
+        return elevation;
+    }
+
+    public float GetScaledElevation(float unscaledElevation)
+    {
+        float elevation = Mathf.Max(0, unscaledElevation);
         elevation = settings.planetRadius * (1 + elevation);
-        if(elevation < 1e10 && elevation > -1e10)
-        {
-            elevationMinMax.AddValue(elevation);
-        }
-        return pointOnUnitSphere * elevation;
+        return elevation;
     }
 }
