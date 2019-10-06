@@ -62,20 +62,21 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\ColourGenerator.cs" />
-    <Compile Include="Assets\Scripts\ColourSettings.cs" />
-    <Compile Include="Assets\Scripts\iNoiseFilter.cs" />
-    <Compile Include="Assets\Scripts\MinMax.cs" />
-    <Compile Include="Assets\Scripts\NewBehaviourScript.cs" />
-    <Compile Include="Assets\Scripts\Noise.cs" />
-    <Compile Include="Assets\Scripts\NoiseFilterFactory.cs" />
-    <Compile Include="Assets\Scripts\NoiseSettings.cs" />
-    <Compile Include="Assets\Scripts\Planet.cs" />
-    <Compile Include="Assets\Scripts\RigidNoiseFilter.cs" />
-    <Compile Include="Assets\Scripts\ShapeGenerator.cs" />
-    <Compile Include="Assets\Scripts\ShapeSettings.cs" />
-    <Compile Include="Assets\Scripts\SimpleNoiseFilter.cs" />
-    <Compile Include="Assets\Scripts\TerrainFace.cs" />
+    <Compile Include="Assets\Scripts\CameraController.cs" />
+    <Compile Include="Assets\Scripts\PlanetGeneration\ColourGenerator.cs" />
+    <Compile Include="Assets\Scripts\PlanetGeneration\ColourSettings.cs" />
+    <Compile Include="Assets\Scripts\PlanetGeneration\iNoiseFilter.cs" />
+    <Compile Include="Assets\Scripts\PlanetGeneration\MinMax.cs" />
+    <Compile Include="Assets\Scripts\PlanetGeneration\NewBehaviourScript.cs" />
+    <Compile Include="Assets\Scripts\PlanetGeneration\Noise.cs" />
+    <Compile Include="Assets\Scripts\PlanetGeneration\NoiseFilterFactory.cs" />
+    <Compile Include="Assets\Scripts\PlanetGeneration\NoiseSettings.cs" />
+    <Compile Include="Assets\Scripts\PlanetGeneration\Planet.cs" />
+    <Compile Include="Assets\Scripts\PlanetGeneration\RigidNoiseFilter.cs" />
+    <Compile Include="Assets\Scripts\PlanetGeneration\ShapeGenerator.cs" />
+    <Compile Include="Assets\Scripts\PlanetGeneration\ShapeSettings.cs" />
+    <Compile Include="Assets\Scripts\PlanetGeneration\SimpleNoiseFilter.cs" />
+    <Compile Include="Assets\Scripts\PlanetGeneration\TerrainFace.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/Public/Documents/Unity Projects/Asteroid-Mining/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
