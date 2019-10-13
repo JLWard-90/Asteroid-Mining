@@ -36,5 +36,17 @@ public class LevelController : MonoBehaviour
         
     }
 
-    
+    public void regeneratePlanet()
+    {
+        Random.InitState(seed);
+        ShapeSettings.NoiseLayer[] noiseLayers = planet.GetComponent<Planet>().shapeSettings.noiseLayers;
+        foreach (ShapeSettings.NoiseLayer noiseLayer in noiseLayers)
+        {
+            noiseLayer.noiseSettings.simpleNoiseSettings.centre = new Vector3(Random.Range(-100f, 100f), Random.Range(-100f, 100f), Random.Range(-100f, 100f));
+            noiseLayer.noiseSettings.rigidNoiseSettings.centre = new Vector3(Random.Range(-100f, 100f), Random.Range(-100f, 100f), Random.Range(-100f, 100f));
+        }
+        planet.GetComponent<Planet>().GeneratePlanet();
+    }
+
+  
 }

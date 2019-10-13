@@ -62,6 +62,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\AsteroidPallette.cs" />
+    <Compile Include="Assets\Scripts\BuildingSystem\BuildingController.cs" />
+    <Compile Include="Assets\Scripts\BuildingSystem\BuildingManager.cs" />
+    <Compile Include="Assets\Scripts\BuildingSystem\BuildingPlacement.cs" />
     <Compile Include="Assets\Scripts\CameraController.cs" />
     <Compile Include="Assets\Scripts\LevelController.cs" />
     <Compile Include="Assets\Scripts\PlanetGeneration\ColourGenerator.cs" />
