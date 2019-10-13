@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Planet : MonoBehaviour
 {
@@ -10,6 +8,7 @@ public class Planet : MonoBehaviour
     [SerializeField, HideInInspector] //Serialize so it saves in the editor but hide it from showing up in the inspector window
     MeshFilter[] meshFilters;
     TerrainFace[] terrainFaces;
+    MeshCollider[] meshColliders;
 
     Vector3[] directions = {Vector3.up,Vector3.down,Vector3.forward,Vector3.back,Vector3.left,Vector3.right}; //All of the cardinal directions
 
@@ -70,8 +69,15 @@ public class Planet : MonoBehaviour
                 meshObject.transform.parent = transform; //Add the new meshobject to current transform
 
                 meshObject.AddComponent<MeshRenderer>();
+                meshObject.AddComponent<MeshCollider>();
                 meshFilters[i] = meshObject.AddComponent<MeshFilter>();
                 meshFilters[i].sharedMesh = new Mesh();
+                meshObject.GetComponent<MeshCollider>().sharedMesh = meshFilters[i].sharedMesh;
+                meshObject.tag = "ground";
+                meshObject.AddComponent<Rigidbody>();
+                meshObject.GetComponent<Rigidbody>().isKinematic = true;
+                meshObject.GetComponent<Rigidbody>().useGravity = false;
+                Debug.Log(meshObject.GetComponent<Rigidbody>());
             }
             if(meshFilters[i].sharedMesh == null)
             {
@@ -82,6 +88,9 @@ public class Planet : MonoBehaviour
             terrainFaces[i] = new TerrainFace(shapeGenerator, meshFilters[i].sharedMesh, resolution, directions[i]);
             bool renderFace = faceRenderMask == FaceRenderMask.All || (int) faceRenderMask - 1 == i;
             meshFilters[i].gameObject.SetActive(renderFace);
+           // Debug.Log(meshFilters[i].gameObject);
+            //meshColliders[i] = meshFilters[i].gameObject.AddComponent<MeshCollider>() as MeshCollider;
+           // meshColliders[i].sharedMesh = meshFilters[i].mesh;
         }
     }
 
@@ -93,6 +102,20 @@ public class Planet : MonoBehaviour
             {
                 terrainFaces[i].ConstructMesh();
             }
+            GameObject meshObject = meshFilters[i].gameObject;
+            if(meshObject.GetComponent<MeshCollider>() == null)
+            {
+                meshObject.AddComponent<MeshCollider>();
+            }
+            meshObject.GetComponent<MeshCollider>().sharedMesh = meshFilters[i].sharedMesh;
+            meshObject.tag = "ground";
+            if(meshObject.GetComponent<Rigidbody>() == null)
+            {
+                meshObject.AddComponent<Rigidbody>();
+            }
+            meshObject.GetComponent<Rigidbody>().isKinematic = true;
+            meshObject.GetComponent<Rigidbody>().useGravity = false;
+            Debug.Log(meshObject.GetComponent<Rigidbody>());
         }
 
         colourGenerator.UpdateElevation(shapeGenerator.elevationMinMax);

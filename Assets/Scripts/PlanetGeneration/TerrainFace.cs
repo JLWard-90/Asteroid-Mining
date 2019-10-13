@@ -61,6 +61,7 @@ public class TerrainFace
         mesh.triangles = triangles;
         mesh.RecalculateNormals();
         mesh.uv = uv;
+       
     }
 
     public void UpdateUVs(ColourGenerator colourGenerator)
