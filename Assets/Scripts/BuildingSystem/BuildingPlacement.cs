@@ -37,7 +37,7 @@ public class BuildingPlacement : MonoBehaviour
                     }
                     if (Input.GetMouseButtonDown(1))
                     {
-                        cancelBuilding(currentBuilding);
+                        currentBuilding = cancelBuilding(currentBuilding);
                     }
                 }
             }
@@ -60,6 +60,7 @@ public class BuildingPlacement : MonoBehaviour
 
     Transform cancelBuilding(Transform currentBuilding)
     {
+        GameObject.Destroy(currentBuilding.gameObject);
         currentBuilding = null;
         return currentBuilding;
     }
