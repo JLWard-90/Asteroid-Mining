@@ -82,6 +82,7 @@
     <Compile Include="Assets\Scripts\PlanetGeneration\ShapeSettings.cs" />
     <Compile Include="Assets\Scripts\PlanetGeneration\SimpleNoiseFilter.cs" />
     <Compile Include="Assets\Scripts\PlanetGeneration\TerrainFace.cs" />
+    <Compile Include="Assets\Scripts\Player.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/Public/Documents/Unity Projects/Asteroid-Mining/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
