@@ -8,9 +8,11 @@ public class PlayersManager : MonoBehaviour
     public Player[] thePlayers;
     public int numberOfPlayers;
     public int startingCash;
+    GameObject gameControllerObject;
     // Start is called before the first frame update
     void Start()
     {
+        gameControllerObject = GameObject.Find("GameController");
         SpawnHumanPlayer();
     }
 
@@ -18,6 +20,7 @@ public class PlayersManager : MonoBehaviour
     {
         GameObject humanPlayer = GameObject.Instantiate(humanPlayerPrefab);
         humanPlayer.GetComponent<HumanPlayer>().InitialisePlayer("Player One", 0, startingCash);
+        humanPlayer.transform.SetParent(gameControllerObject.transform);
         return humanPlayer;
     }
 }

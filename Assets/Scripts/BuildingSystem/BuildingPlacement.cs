@@ -14,6 +14,14 @@ public class BuildingPlacement : MonoBehaviour
         Debug.Log(planet);
     }
 
+    public void GetPlanet()
+    {
+        if(planet == null)
+        {
+            planet = GameObject.Find("Planet(Clone)").GetComponent<Planet>();
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {

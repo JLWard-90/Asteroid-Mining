@@ -36,6 +36,7 @@ public class LevelController : MonoBehaviour
         mainCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraController>();
         mainCamera.focusPlanet = planet;
         planet.GetComponent<Planet>().GeneratePlanet();
+        GameObject.Find("GameController").GetComponentInChildren<BuildingPlacement>().GetPlanet();
     }
 
     public void regeneratePlanet()
