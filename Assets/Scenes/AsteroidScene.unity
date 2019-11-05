@@ -222,6 +222,7 @@ GameObject:
   - component: {fileID: 712616535}
   - component: {fileID: 712616534}
   - component: {fileID: 712616536}
+  - component: {fileID: 712616537}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -276,6 +277,18 @@ MonoBehaviour:
   thePlayers: []
   numberOfPlayers: 0
   startingCash: 0
+--- !u!114 &712616537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 712616533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca76ab96d9e706748bf2c24051e6e77a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &776837919
 GameObject:
   m_ObjectHideFlags: 0

@@ -23,4 +23,14 @@ public class GameController : MonoBehaviour
         //don't destroy on changing scene
         DontDestroyOnLoad(gameObject);
     }
+
+    void LoadFromSave()
+    {
+
+    }
+
+    void SaveToFile()
+    {
+
+    }
 }
