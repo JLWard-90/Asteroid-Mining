@@ -7,9 +7,11 @@ public class BuildingPlacement : MonoBehaviour
     // Start is called before the first frame update
     //Need to get the position of the planet and ensure that the 
     private Transform currentBuilding;
+    private Planet planet;
     void Start()
     {
-        
+        planet = GameObject.Find("Planet(Clone)").GetComponent<Planet>();
+        Debug.Log(planet);
     }
 
     // Update is called once per frame
@@ -33,7 +35,14 @@ public class BuildingPlacement : MonoBehaviour
                     currentBuilding.up = lookVector;
                     if (Input.GetMouseButtonDown(0))
                     {
-                        currentBuilding = placeBuilding(currentBuilding, hit.transform);
+                        if(CheckOnGround(hit.point, planet))
+                        {
+                            currentBuilding = placeBuilding(currentBuilding, hit.transform);
+                        }
+                        else
+                        {
+                            Debug.Log("Cannot build here!");
+                        }
                     }
                     if (Input.GetMouseButtonDown(1))
                     {
@@ -63,5 +72,22 @@ public class BuildingPlacement : MonoBehaviour
         GameObject.Destroy(currentBuilding.gameObject);
         currentBuilding = null;
         return currentBuilding;
+    }
+
+    bool CheckOnGround(Vector3 hitPos, Planet theplanet)
+    {
+        bool grounded = false;
+        float distanceToCentre = 1.0f;
+        distanceToCentre = Vector3.Distance(hitPos, theplanet.transform.position);
+        float padding = 0.01f;
+        if(distanceToCentre < theplanet.shapeSettings.planetRadius - padding || distanceToCentre > theplanet.shapeSettings.planetRadius + padding)
+        {
+            grounded = false;
+        }
+        else
+        {
+            grounded = true;
+        }
+        return grounded;
     }
 }
