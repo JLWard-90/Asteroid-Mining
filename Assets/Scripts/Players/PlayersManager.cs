@@ -4,22 +4,20 @@ using UnityEngine;
 
 public class PlayersManager : MonoBehaviour
 {
+    public GameObject humanPlayerPrefab;
     public Player[] thePlayers;
     public int numberOfPlayers;
+    public int startingCash;
     // Start is called before the first frame update
     void Start()
     {
-        
+        SpawnHumanPlayer();
     }
 
-    // Update is called once per frame
-    void Update()
+    public GameObject SpawnHumanPlayer()
     {
-        
-    }
-
-    private void CreatePlayer()
-    {
-
+        GameObject humanPlayer = GameObject.Instantiate(humanPlayerPrefab);
+        humanPlayer.GetComponent<HumanPlayer>().InitialisePlayer("Player One", 0, startingCash);
+        return humanPlayer;
     }
 }

@@ -9,6 +9,9 @@ public class LevelController : MonoBehaviour
     GameObject planet;
     [SerializeField]
     GameObject planetPrefab;
+    [SerializeField]
+    GameObject playerPrefab;
+    GameObject player;
     // Start is called before the first frame update
     public int seed = 1234;
     private void Awake()
@@ -33,7 +36,6 @@ public class LevelController : MonoBehaviour
         mainCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraController>();
         mainCamera.focusPlanet = planet;
         planet.GetComponent<Planet>().GeneratePlanet();
-        
     }
 
     public void regeneratePlanet()

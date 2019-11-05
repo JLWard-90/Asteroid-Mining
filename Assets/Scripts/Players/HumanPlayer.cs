@@ -13,11 +13,13 @@ public class HumanPlayer : Player
         buildPlacement = new BuildingPlacement();
     }
 
-    public HumanPlayer(string playerName,int playerNumber, int cash)
+    public void InitialisePlayer(string playerName,int playerNumber, int cash)
     {
         this.playerName = playerName;
         this.playerNumber = playerNumber;
-        this.playerCash = cash;
+        playerCash = cash;
+        buildManager = this.gameObject.AddComponent<BuildingManager>();
+        buildPlacement = this.gameObject.AddComponent<BuildingPlacement>();
     }
 
     // Update is called once per frame
