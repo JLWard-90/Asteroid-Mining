@@ -64,6 +64,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\AsteroidPallette.cs" />
     <Compile Include="Assets\Scripts\BuildingSystem\BuildingController.cs" />
+    <Compile Include="Assets\Scripts\BuildingSystem\BuildingList.cs" />
     <Compile Include="Assets\Scripts\BuildingSystem\BuildingManager.cs" />
     <Compile Include="Assets\Scripts\BuildingSystem\BuildingPlacement.cs" />
     <Compile Include="Assets\Scripts\CameraController.cs" />
@@ -82,7 +83,10 @@
     <Compile Include="Assets\Scripts\PlanetGeneration\ShapeSettings.cs" />
     <Compile Include="Assets\Scripts\PlanetGeneration\SimpleNoiseFilter.cs" />
     <Compile Include="Assets\Scripts\PlanetGeneration\TerrainFace.cs" />
-    <Compile Include="Assets\Scripts\Player.cs" />
+    <Compile Include="Assets\Scripts\Players\AIPlayer.cs" />
+    <Compile Include="Assets\Scripts\Players\HumanPlayer.cs" />
+    <Compile Include="Assets\Scripts\Players\Player.cs" />
+    <Compile Include="Assets\Scripts\Players\PlayersManager.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/Public/Documents/Unity Projects/Asteroid-Mining/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>

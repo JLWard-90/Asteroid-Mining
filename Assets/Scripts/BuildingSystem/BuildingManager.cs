@@ -5,11 +5,12 @@ using UnityEngine;
 public class BuildingManager : MonoBehaviour
 {
 
-    public GameObject[] buildings;
+    private GameObject[] buildings;
     BuildingPlacement buildingPlacement;
     // Start is called before the first frame update
     void Start()
     {
+        buildings = GameObject.Find("GameController").GetComponent<BuildingList>().buildings;
         buildingPlacement = GetComponent<BuildingPlacement>();
     }
 

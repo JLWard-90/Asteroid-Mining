@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class PlayersManager : MonoBehaviour
 {
+    public Player[] thePlayers;
+    public int numberOfPlayers;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,5 +16,10 @@ public class Player : MonoBehaviour
     void Update()
     {
         
+    }
+
+    private void CreatePlayer()
+    {
+
     }
 }
