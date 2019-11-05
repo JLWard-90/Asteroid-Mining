@@ -26,10 +26,10 @@ public class BuildingPlacement : MonoBehaviour
             var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out hit))
             {
-                Debug.Log(hit);
+                //Debug.Log(hit);
                 if (hit.rigidbody != null && hit.transform.tag == "ground")
                 {
-                    Debug.Log(hit.point);
+                    //Debug.Log(hit.point);
                     currentBuilding.position = hit.point;
                     Vector3 lookVector = hit.point - hit.transform.position;
                     currentBuilding.up = lookVector;
