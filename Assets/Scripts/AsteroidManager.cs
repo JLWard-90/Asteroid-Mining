@@ -7,8 +7,8 @@ public class AsteroidManager : MonoBehaviour
     public int numberOfAsteroids;
     public List<int> AsteroidSeeds;
     public List<Asteroid> asteroids;
-    public Vector2 xdim = new Vector2(200f,800f);
-    public Vector2 ydim = new Vector2(150f, 450f);
+    public Vector2 xdim = new Vector2(-20f,20f);
+    public Vector2 ydim = new Vector2(-20f, 20f);
     [SerializeField]
     float astRepZpos = -164.6159f;
     [SerializeField]
