@@ -37,9 +37,17 @@ public class NavManager : MonoBehaviour
     }
     public void GoToStrategicOverlay()
     {
+        GameObject.Find("Planet(Clone)").SetActive(false);
         SceneManager.LoadScene("StrategicScreen");
         asteroidManager = GameObject.Find("GameController").GetComponent<AsteroidManager>();
         asteroidManager.shiftBack();
         //asteroidManager.InitAllAsteroidReps();
+    }
+    public string getSceneName()
+    {
+        string name = "";
+        Scene scene = SceneManager.GetActiveScene();
+        name = scene.name;
+        return name;
     }
 }

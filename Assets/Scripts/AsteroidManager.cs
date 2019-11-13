@@ -7,6 +7,7 @@ public class AsteroidManager : MonoBehaviour
     public int numberOfAsteroids;
     public List<int> AsteroidSeeds;
     public List<Asteroid> asteroids;
+    public List<GameObject> planets;
     public Vector2 xdim = new Vector2(-20f,20f);
     public Vector2 ydim = new Vector2(-20f, 20f);
     [SerializeField]
@@ -43,6 +44,7 @@ public class AsteroidManager : MonoBehaviour
                 Vector2 asteroidPosition = new Vector2(posX, posY);
                 Asteroid newasteroid = new Asteroid(newSeed, asteroidPosition);
                 asteroids.Add(newasteroid);
+                planets.Add(new GameObject());
                 foundNewSeed = true;
             }
         }

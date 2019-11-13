@@ -15,7 +15,13 @@ public class CameraController : MonoBehaviour
     public GameObject focusPlanet;
 
     public float zoomDist = 3;
-
+    private void Start()
+    {
+        if(focusPlanet == null)
+        {
+            focusPlanet = GameObject.Find("Planet(Clone)");
+        }
+    }
     private void Update()
     {
         RotateHandler(focusPlanet);

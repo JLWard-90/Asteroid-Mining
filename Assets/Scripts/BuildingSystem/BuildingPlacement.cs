@@ -10,8 +10,12 @@ public class BuildingPlacement : MonoBehaviour
     private Planet planet;
     void Start()
     {
-        planet = GameObject.Find("Planet(Clone)").GetComponent<Planet>();
-        Debug.Log(planet);
+        NavManager navManager = GameObject.Find("NavigationManager").GetComponent<NavManager>();
+        if (navManager.getSceneName() == "AsteroidScene")
+        {
+            planet = GameObject.Find("Planet(Clone)").GetComponent<Planet>();
+            Debug.Log(planet);
+        }
     }
 
     public void GetPlanet()
