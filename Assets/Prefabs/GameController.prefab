@@ -94,7 +94,7 @@ MonoBehaviour:
   numberOfAsteroids: 10
   AsteroidSeeds: 
   asteroids: []
-  xdim: {x: -6, y: 6}
+  xdim: {x: -4, y: 4}
   ydim: {x: -6, y: 6}
   astRepZpos: 0
   asteroidRepPrefab: {fileID: 362190264243968782, guid: 060cc23de64d3754db2001fe6e26932d,

@@ -12,10 +12,18 @@ public class LevelController : MonoBehaviour
     [SerializeField]
     GameObject playerPrefab;
     GameObject player;
+    GameController gameController;
+    NavManager navManager;
+    AsteroidManager asteroidManager;
     // Start is called before the first frame update
     public int seed = 1234;
     private void Awake()
     {
+        gameController = GameObject.Find("GameController").GetComponent<GameController>();
+        navManager = GameObject.Find("NavigationManager").GetComponent<NavManager>();
+        asteroidManager = GameObject.Find("GameController").GetComponent<AsteroidManager>();
+        int selectedAstIndex = navManager.selectedAsteroidIndex;
+        seed = asteroidManager.AsteroidSeeds[selectedAstIndex];
         planet = Instantiate(planetPrefab);
         planet.transform.position = new Vector3(0, 0, 0);
         Random.InitState(seed);
