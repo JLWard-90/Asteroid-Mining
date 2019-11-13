@@ -7,6 +7,7 @@ public class NavManager : MonoBehaviour
 {
     public int selectedAsteroidIndex;
     public static NavManager instance;
+    AsteroidManager asteroidManager;
     void Awake()
     {
         //check if instance exists
@@ -24,8 +25,18 @@ public class NavManager : MonoBehaviour
         //don't destroy on changing scene
         DontDestroyOnLoad(gameObject);
     }
+    private void Start()
+    {
+        asteroidManager = GameObject.Find("GameController").GetComponent<AsteroidManager>();
+    }
     public void OnTestButtonPush()
     {
         SceneManager.LoadScene("AsteroidScene");
+    }
+    public void GoToStrategicOverlay()
+    {
+        SceneManager.LoadScene("StrategicScreen");
+        asteroidManager = GameObject.Find("GameController").GetComponent<AsteroidManager>();
+        asteroidManager.InitAllAsteroidReps();
     }
 }

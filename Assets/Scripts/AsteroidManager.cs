@@ -13,7 +13,6 @@ public class AsteroidManager : MonoBehaviour
     float astRepZpos = -164.6159f;
     [SerializeField]
     GameObject asteroidRepPrefab;
-
     private void Start()
     {
         asteroids = new List<Asteroid>();
@@ -52,5 +51,14 @@ public class AsteroidManager : MonoBehaviour
         Vector2 position = current.position;
         GameObject newAstRep = GameObject.Instantiate(asteroidRepPrefab);
         newAstRep.transform.position = new Vector3(position.x, position.y, astRepZpos);
+        newAstRep.transform.SetParent(this.gameObject.transform);
+    }
+
+    public void InitAllAsteroidReps()
+    {
+        for(int i=0; i<asteroids.Count;i++)
+        {
+            InitAsteroidRep(i);
+        }
     }
 }
