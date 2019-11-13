@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Building
   - ground
+  - astRep
   layers:
   - Default
   - TransparentFX

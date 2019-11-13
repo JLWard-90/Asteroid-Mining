@@ -51,12 +51,13 @@ public class AsteroidManager : MonoBehaviour
     void InitAsteroidRep(int index)
     {
         Asteroid current = asteroids[index];
-        Debug.Log(current);
+        Debug.Log(current.position);
         Vector2 position = current.position;
         GameObject newAstRep = GameObject.Instantiate(asteroidRepPrefab);
-        newAstRep.transform.position = new Vector3(position.x, position.y, astRepZpos);
         newAstRep.transform.SetParent(this.gameObject.transform);
+        newAstRep.transform.position = new Vector3(position.x, position.y, astRepZpos);
         newAstRep.gameObject.tag = "astRep";
+        newAstRep.GetComponent<astRepControl>().index = index;
     }
 
     public void InitAllAsteroidReps()
