@@ -15,7 +15,7 @@ public class AsteroidManager : MonoBehaviour
     [SerializeField]
     GameObject asteroidRepPrefab;
     [SerializeField]
-    float shiftLength = 100; //An arbitrary length to shift the strategic overlay components away from the camera when not in use
+    float shiftLength = 10000; //An arbitrary length to shift the strategic overlay components away from the camera when not in use
     private void Start()
     {
         asteroids = new List<Asteroid>();
