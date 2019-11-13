@@ -31,12 +31,15 @@ public class NavManager : MonoBehaviour
     }
     public void OnTestButtonPush()
     {
+        Debug.Log("Loading asteroid view");
         SceneManager.LoadScene("AsteroidScene");
+        asteroidManager.shiftAway();
     }
     public void GoToStrategicOverlay()
     {
         SceneManager.LoadScene("StrategicScreen");
         asteroidManager = GameObject.Find("GameController").GetComponent<AsteroidManager>();
-        asteroidManager.InitAllAsteroidReps();
+        asteroidManager.shiftBack();
+        //asteroidManager.InitAllAsteroidReps();
     }
 }

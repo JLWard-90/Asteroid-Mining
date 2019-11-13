@@ -13,6 +13,8 @@ public class AsteroidManager : MonoBehaviour
     float astRepZpos = -164.6159f;
     [SerializeField]
     GameObject asteroidRepPrefab;
+    [SerializeField]
+    float shiftLength = 100; //An arbitrary length to shift the strategic overlay components away from the camera when not in use
     private void Start()
     {
         asteroids = new List<Asteroid>();
@@ -39,7 +41,8 @@ public class AsteroidManager : MonoBehaviour
             {
                 AsteroidSeeds.Add(newSeed);
                 Vector2 asteroidPosition = new Vector2(posX, posY);
-                asteroids.Add(new Asteroid(newSeed, asteroidPosition));
+                Asteroid newasteroid = new Asteroid(newSeed, asteroidPosition);
+                asteroids.Add(newasteroid);
                 foundNewSeed = true;
             }
         }
@@ -48,10 +51,12 @@ public class AsteroidManager : MonoBehaviour
     void InitAsteroidRep(int index)
     {
         Asteroid current = asteroids[index];
+        Debug.Log(current);
         Vector2 position = current.position;
         GameObject newAstRep = GameObject.Instantiate(asteroidRepPrefab);
         newAstRep.transform.position = new Vector3(position.x, position.y, astRepZpos);
         newAstRep.transform.SetParent(this.gameObject.transform);
+        newAstRep.gameObject.tag = "astRep";
     }
 
     public void InitAllAsteroidReps()
@@ -59,6 +64,24 @@ public class AsteroidManager : MonoBehaviour
         for(int i=0; i<asteroids.Count;i++)
         {
             InitAsteroidRep(i);
+        }
+    }
+
+    public void shiftAway()
+    {
+        GameObject[] astreps = GameObject.FindGameObjectsWithTag("astRep");
+        foreach(GameObject astRep in astreps)
+        {
+            astRep.transform.position = new Vector3(astRep.transform.position.x, astRep.transform.position.y + shiftLength, astRep.transform.position.z);
+        }
+    }
+
+    public void shiftBack()
+    {
+        GameObject[] astreps = GameObject.FindGameObjectsWithTag("astRep");
+        foreach (GameObject astRep in astreps)
+        {
+            astRep.transform.position = new Vector3(astRep.transform.position.x, astRep.transform.position.y - shiftLength, astRep.transform.position.z);
         }
     }
 }

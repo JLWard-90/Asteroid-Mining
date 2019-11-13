@@ -1,8 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class Asteroid : MonoBehaviour
+[System.Serializable]
+public class Asteroid
 {
     public int seedValue;
     public Vector2 position;
