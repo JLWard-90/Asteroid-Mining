@@ -23,6 +23,7 @@ public class LevelController : MonoBehaviour
         gameController = GameObject.Find("GameController").GetComponent<GameController>();
         navManager = GameObject.Find("NavigationManager").GetComponent<NavManager>();
         asteroidManager = GameObject.Find("GameController").GetComponent<AsteroidManager>();
+        asteroidManager.ShiftAway();
         int selectedAstIndex = navManager.selectedAsteroidIndex;
         asteroidPreviouslyGenerated = asteroidManager.asteroids[selectedAstIndex].prevgenerated;
         if (!asteroidPreviouslyGenerated)

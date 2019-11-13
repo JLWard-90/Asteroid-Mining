@@ -15,7 +15,8 @@ public class AsteroidManager : MonoBehaviour
     [SerializeField]
     GameObject asteroidRepPrefab;
     [SerializeField]
-    float shiftLength = 10000; //An arbitrary length to shift the strategic overlay components away from the camera when not in use
+    float shiftLength = -10000; //An arbitrary length to shift the strategic overlay components away from the camera when not in use
+    public List<GameObject> astRepList = new List<GameObject>();
     private void Start()
     {
         asteroids = new List<Asteroid>();
@@ -56,6 +57,7 @@ public class AsteroidManager : MonoBehaviour
         Debug.Log(current.position);
         Vector2 position = current.position;
         GameObject newAstRep = GameObject.Instantiate(asteroidRepPrefab);
+        astRepList.Add(newAstRep);
         newAstRep.transform.SetParent(this.gameObject.transform);
         newAstRep.transform.position = new Vector3(position.x, position.y, astRepZpos);
         newAstRep.gameObject.tag = "astRep";
@@ -70,21 +72,21 @@ public class AsteroidManager : MonoBehaviour
         }
     }
 
-    public void shiftAway()
+    public void ShiftAway()
     {
-        GameObject[] astreps = GameObject.FindGameObjectsWithTag("astRep");
-        foreach(GameObject astRep in astreps)
+        Debug.Log(astRepList.Count);
+        for(int i=0; i<astRepList.Count;i++)
         {
-            astRep.transform.position = new Vector3(astRep.transform.position.x, astRep.transform.position.y + shiftLength, astRep.transform.position.z);
+            Debug.Log(i);
+            astRepList[i].SetActive(false);
         }
     }
 
-    public void shiftBack()
+    public void ShiftBack()
     {
-        GameObject[] astreps = GameObject.FindGameObjectsWithTag("astRep");
-        foreach (GameObject astRep in astreps)
+        foreach (GameObject astRep in astRepList)
         {
-            astRep.transform.position = new Vector3(astRep.transform.position.x, astRep.transform.position.y - shiftLength, astRep.transform.position.z);
+            astRep.SetActive(true);
         }
     }
 }

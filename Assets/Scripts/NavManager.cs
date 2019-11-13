@@ -28,19 +28,19 @@ public class NavManager : MonoBehaviour
     private void Start()
     {
         asteroidManager = GameObject.Find("GameController").GetComponent<AsteroidManager>();
+        Debug.Log(asteroidManager);
     }
     public void OnTestButtonPush()
     {
         Debug.Log("Loading asteroid view");
         SceneManager.LoadScene("AsteroidScene");
-        asteroidManager.shiftAway();
     }
     public void GoToStrategicOverlay()
     {
         GameObject.Find("Planet(Clone)").SetActive(false);
         SceneManager.LoadScene("StrategicScreen");
         asteroidManager = GameObject.Find("GameController").GetComponent<AsteroidManager>();
-        asteroidManager.shiftBack();
+        asteroidManager.ShiftBack();
         //asteroidManager.InitAllAsteroidReps();
     }
     public string getSceneName()
