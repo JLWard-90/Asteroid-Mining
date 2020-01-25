@@ -205,7 +205,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 8566980858067777841, guid: 1d275436938982f4b9c134a8f58bf0e0,
           type: 3}
-        m_MethodName: OnTestButtonPush
+        m_MethodName: LoadAsteroidView
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

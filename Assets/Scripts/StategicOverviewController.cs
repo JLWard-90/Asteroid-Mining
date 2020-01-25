@@ -33,7 +33,7 @@ public class StategicOverviewController : MonoBehaviour
     
     private void OnLeftMouseClick()//On Left Mouse button click:
     {
-        Debug.Log("left mouse click");
+        //Debug.Log("left mouse click");
         RaycastHit hit;
         var ray = Camera.main.ScreenPointToRay(Input.mousePosition);//screen to raycast
         if (Physics.Raycast(ray, out hit))
@@ -57,7 +57,23 @@ public class StategicOverviewController : MonoBehaviour
 
     private void OnRightMouseClick()
     {
-
+        RaycastHit hit;
+        var ray = Camera.main.ScreenPointToRay(Input.mousePosition);//screen to raycast
+        if (Physics.Raycast(ray, out hit))
+        {
+            //Debug.Log("hit");
+            //Debug.Log(hit.distance);
+            if (hit.collider.gameObject.tag == "astRep") //If hit asteroid rep
+            {
+                //If an asteroid was already selected, deselect it:
+                int oldIndex = navManager.selectedAsteroidIndex;
+                astManager.astRepList[oldIndex].GetComponentInChildren<SpriteRenderer>().color = new Color(255, 255, 255);
+                //Set selected asteroid in navigation controller to that asteroid rep's index
+                int asteroidIndex = hit.collider.gameObject.GetComponent<astRepControl>().index;
+                navManager.selectedAsteroidIndex = asteroidIndex;
+                navManager.LoadAsteroidView();
+            }
+        }
     }
 
     //On Left Mouse button double-click

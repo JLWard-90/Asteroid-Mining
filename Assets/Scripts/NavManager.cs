@@ -30,7 +30,7 @@ public class NavManager : MonoBehaviour
         asteroidManager = GameObject.Find("GameController").GetComponent<AsteroidManager>();
         Debug.Log(asteroidManager);
     }
-    public void OnTestButtonPush()
+    public void LoadAsteroidView()
     {
         Debug.Log("Loading asteroid view");
         SceneManager.LoadScene("AsteroidScene");
