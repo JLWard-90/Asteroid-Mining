@@ -401,6 +401,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8950718326449288807, guid: f99790347c81d804a948152e351e826e,
+        type: 3}
+      propertyPath: numberOfAsteroids
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 8950718326449288807, guid: f99790347c81d804a948152e351e826e,
+        type: 3}
+      propertyPath: xdim.x
+      value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8950718326449288807, guid: f99790347c81d804a948152e351e826e,
+        type: 3}
+      propertyPath: xdim.y
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 8950718326449288808, guid: f99790347c81d804a948152e351e826e,
         type: 3}
       propertyPath: m_Name
