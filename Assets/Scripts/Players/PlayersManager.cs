@@ -17,7 +17,7 @@ public class PlayersManager : MonoBehaviour
             thePlayers = new List<GameObject>();
         }
         gameControllerObject = GameObject.Find("GameController");
-        thePlayers.Add(SpawnHumanPlayer());
+        thePlayers.Add(SpawnHumanPlayer()); //In the future, this will need to be adapted to handle a loaded game. i.e. only do this if the game is a new one.
     }
 
     public GameObject SpawnHumanPlayer()
@@ -25,6 +25,7 @@ public class PlayersManager : MonoBehaviour
         GameObject humanPlayer = GameObject.Instantiate(humanPlayerPrefab);
         humanPlayer.GetComponent<HumanPlayer>().InitialisePlayer("Player One", 0, startingCash);
         humanPlayer.transform.SetParent(gameControllerObject.transform);
+        humanPlayer.name = "humanPlayer";
         return humanPlayer;
     }
 }

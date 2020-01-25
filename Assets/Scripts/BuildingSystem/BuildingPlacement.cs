@@ -8,6 +8,7 @@ public class BuildingPlacement : MonoBehaviour
     //Need to get the position of the planet and ensure that the 
     private Transform currentBuilding;
     private Planet planet;
+    private Player humanPlayer;
     void Start()
     {
         NavManager navManager = GameObject.Find("NavigationManager").GetComponent<NavManager>();
@@ -15,6 +16,10 @@ public class BuildingPlacement : MonoBehaviour
         {
             planet = GameObject.Find("Planet(Clone)").GetComponent<Planet>();
             Debug.Log(planet);
+        }
+        if (humanPlayer == null)
+        {
+            humanPlayer = GameObject.Find("GameController").transform.Find("humanPlayer").GetComponent<HumanPlayer>();
         }
     }
 
@@ -47,14 +52,7 @@ public class BuildingPlacement : MonoBehaviour
                     currentBuilding.up = lookVector;
                     if (Input.GetMouseButtonDown(0))
                     {
-                        if(CheckOnGround(hit.point, planet))
-                        {
-                            currentBuilding = placeBuilding(currentBuilding, hit.transform);
-                        }
-                        else
-                        {
-                            Debug.Log("Cannot build here!");
-                        }
+                        AttemptBuild(hit);
                     }
                     if (Input.GetMouseButtonDown(1))
                     {
@@ -70,6 +68,21 @@ public class BuildingPlacement : MonoBehaviour
     public void SetItem(GameObject b)
     {
         currentBuilding = Instantiate(b).transform;
+    }
+
+    void AttemptBuild(RaycastHit hit)
+    {
+        if (CheckOnGround(hit.point, planet))
+        {
+            if (humanPlayer.getCash() > currentBuilding.GetComponent<Building>().buildingCost)
+            {
+                currentBuilding = placeBuilding(currentBuilding, hit.transform);
+                return;
+            }
+            Debug.Log("Cannot afford this!");
+            return;
+        }
+        Debug.Log("Cannot build here!");
     }
 
     Transform placeBuilding(Transform currentBuilding, Transform hitTransform)

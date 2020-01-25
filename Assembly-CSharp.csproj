@@ -66,6 +66,7 @@
     <Compile Include="Assets\Scripts\Asteroid.cs" />
     <Compile Include="Assets\Scripts\AsteroidManager.cs" />
     <Compile Include="Assets\Scripts\AsteroidPallette.cs" />
+    <Compile Include="Assets\Scripts\BuildingSystem\Building.cs" />
     <Compile Include="Assets\Scripts\BuildingSystem\BuildingController.cs" />
     <Compile Include="Assets\Scripts\BuildingSystem\BuildingList.cs" />
     <Compile Include="Assets\Scripts\BuildingSystem\BuildingManager.cs" />
