@@ -73,6 +73,7 @@
     <Compile Include="Assets\Scripts\CameraController.cs" />
     <Compile Include="Assets\Scripts\GameController.cs" />
     <Compile Include="Assets\Scripts\LevelController.cs" />
+    <Compile Include="Assets\Scripts\MissileController.cs" />
     <Compile Include="Assets\Scripts\NavManager.cs" />
     <Compile Include="Assets\Scripts\PlanetGeneration\ColourGenerator.cs" />
     <Compile Include="Assets\Scripts\PlanetGeneration\ColourSettings.cs" />
