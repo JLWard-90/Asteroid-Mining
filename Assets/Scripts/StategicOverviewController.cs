@@ -44,12 +44,13 @@ public class StategicOverviewController : MonoBehaviour
             {
                 //If an asteroid was already selected, deselect it:
                 int oldIndex = navManager.selectedAsteroidIndex;
-                astManager.astRepList[oldIndex].GetComponentInChildren<SpriteRenderer>().color = new Color(255, 255, 255);
+                Color deselect = new Color(0.389f, 0.389f, 0.389f); //Grey
+                astManager.astRepList[oldIndex].GetComponentInChildren<SpriteRenderer>().color = deselect;
                 //Set selected asteroid in navigation controller to that asteroid rep's index
                 int asteroidIndex = hit.collider.gameObject.GetComponent<astRepControl>().index;
                 navManager.selectedAsteroidIndex = asteroidIndex;
                 //Change asteroid rep colour
-                Color newColor = new Color(255, 0, 0); //RED
+                Color newColor = new Color(255, 255, 255); //white
                 hit.collider.gameObject.GetComponentInChildren<SpriteRenderer>().color = newColor;
             }
         }
@@ -67,7 +68,7 @@ public class StategicOverviewController : MonoBehaviour
             {
                 //If an asteroid was already selected, deselect it:
                 int oldIndex = navManager.selectedAsteroidIndex;
-                astManager.astRepList[oldIndex].GetComponentInChildren<SpriteRenderer>().color = new Color(255, 255, 255);
+                astManager.astRepList[oldIndex].GetComponentInChildren<SpriteRenderer>().color = new Color(100, 100, 100);
                 //Set selected asteroid in navigation controller to that asteroid rep's index
                 int asteroidIndex = hit.collider.gameObject.GetComponent<astRepControl>().index;
                 navManager.selectedAsteroidIndex = asteroidIndex;
