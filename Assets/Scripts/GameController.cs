@@ -23,7 +23,13 @@ public class GameController : MonoBehaviour
         //don't destroy on changing scene
         DontDestroyOnLoad(gameObject);
     }
-
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
+    }
     void LoadFromSave()
     {
 

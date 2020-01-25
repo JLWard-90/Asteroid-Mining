@@ -32,6 +32,10 @@ public class NavManager : MonoBehaviour
     }
     public void LoadAsteroidView()
     {
+        if(asteroidManager != null)
+        {
+            asteroidManager.astRepList[selectedAsteroidIndex].GetComponent<astRepControl>().OnDeselect();
+        }
         Debug.Log("Loading asteroid view");
         SceneManager.LoadScene("AsteroidScene");
     }
