@@ -5,15 +5,19 @@ using UnityEngine;
 public class PlayersManager : MonoBehaviour
 {
     public GameObject humanPlayerPrefab;
-    public Player[] thePlayers;
-    public int numberOfPlayers;
+    public List<GameObject> thePlayers;
+    public int numberOfAIPlayers;
     public int startingCash;
     GameObject gameControllerObject;
     // Start is called before the first frame update
     void Start()
     {
+        if (thePlayers == null)
+        {
+            thePlayers = new List<GameObject>();
+        }
         gameControllerObject = GameObject.Find("GameController");
-        SpawnHumanPlayer();
+        thePlayers.Add(SpawnHumanPlayer());
     }
 
     public GameObject SpawnHumanPlayer()

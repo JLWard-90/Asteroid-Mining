@@ -401,6 +401,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8950718326449288805, guid: f99790347c81d804a948152e351e826e,
+        type: 3}
+      propertyPath: thePlayers.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8950718326449288805, guid: f99790347c81d804a948152e351e826e,
+        type: 3}
+      propertyPath: numberOfPlayers
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8950718326449288805, guid: f99790347c81d804a948152e351e826e,
+        type: 3}
+      propertyPath: startingCash
+      value: 10000
+      objectReference: {fileID: 0}
     - target: {fileID: 8950718326449288807, guid: f99790347c81d804a948152e351e826e,
         type: 3}
       propertyPath: numberOfAsteroids
