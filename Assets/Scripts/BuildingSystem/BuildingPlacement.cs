@@ -88,8 +88,8 @@ public class BuildingPlacement : MonoBehaviour
     Transform PlaceBuilding(Transform currentBuilding, Transform hitTransform)
     {
         currentBuilding.SetParent(hitTransform);
-        currentBuilding = null;
         currentBuilding.GetComponent<Building>().buildingOwner = humanPlayer;
+        currentBuilding = null;        
         return currentBuilding;
     }
 

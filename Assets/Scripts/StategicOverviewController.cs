@@ -38,8 +38,8 @@ public class StategicOverviewController : MonoBehaviour
         var ray = Camera.main.ScreenPointToRay(Input.mousePosition);//screen to raycast
         if (Physics.Raycast(ray, out hit))
         {
-            Debug.Log("hit");
-            Debug.Log(hit.distance);
+            //Debug.Log("hit");
+            //Debug.Log(hit.distance);
             if (hit.collider.gameObject.tag == "astRep") //If hit asteroid rep
             {
                 //If an asteroid was already selected, deselect it:
