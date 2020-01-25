@@ -12,7 +12,7 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        this.gameObject.AddComponent<HumanPlayer>();
+        //this.gameObject.AddComponent<HumanPlayer>();
     }
 
     // Update is called once per frame

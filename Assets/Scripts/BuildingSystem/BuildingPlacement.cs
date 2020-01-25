@@ -76,7 +76,7 @@ public class BuildingPlacement : MonoBehaviour
         {
             if (humanPlayer.getCash() > currentBuilding.GetComponent<Building>().buildingCost)
             {
-                currentBuilding = placeBuilding(currentBuilding, hit.transform);
+                currentBuilding = PlaceBuilding(currentBuilding, hit.transform);
                 return;
             }
             Debug.Log("Cannot afford this!");
@@ -85,10 +85,11 @@ public class BuildingPlacement : MonoBehaviour
         Debug.Log("Cannot build here!");
     }
 
-    Transform placeBuilding(Transform currentBuilding, Transform hitTransform)
+    Transform PlaceBuilding(Transform currentBuilding, Transform hitTransform)
     {
         currentBuilding.SetParent(hitTransform);
         currentBuilding = null;
+        currentBuilding.GetComponent<Building>().buildingOwner = humanPlayer;
         return currentBuilding;
     }
 

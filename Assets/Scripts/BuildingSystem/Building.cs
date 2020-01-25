@@ -8,4 +8,5 @@ public class Building : MonoBehaviour
     public int buildingCost;
     public int buildingHealth;
     public int buildingArmour;
+    public Player buildingOwner;
 }
