@@ -94,6 +94,7 @@
     <Compile Include="Assets\Scripts\Players\HumanPlayer.cs" />
     <Compile Include="Assets\Scripts\Players\Player.cs" />
     <Compile Include="Assets\Scripts\Players\PlayersManager.cs" />
+    <Compile Include="Assets\Scripts\Resources\Resource.cs" />
     <Compile Include="Assets\Scripts\StategicOverviewController.cs" />
     <Compile Include="Assets\Scripts\astRepControl.cs" />
     <Reference Include="Unity.RenderPipeline.Universal.ShaderLibrary">
