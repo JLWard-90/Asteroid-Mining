@@ -22,7 +22,48 @@ public class MarketController : MonoBehaviour
                 return current.GetValue();
             }
         }
-        Debug.Log("Resource Not Found!");
+        Debug.Log("MarketController::GetValue Error: Resource not found!");
         return -1;
+    }
+    public void SetValue(string name, int newValue)
+    {
+        Resource current;
+        for (int i=0; i< resources.Count; i++)
+        {
+            current = resources[i];
+            if(current.Name() == name)
+            {
+                current.SetValue(newValue);
+            }
+        }
+        Debug.LogError("MarketController::SetValue Error: Resource not found!");
+    }
+    public float GetProbability(string name)
+    {
+        Resource current;
+        for (int i=0;i<resources.Count; i++)
+        {
+            current = resources[i];
+            if(current.Name() == name)
+            {
+                return current.Probability();
+            }
+        }
+        Debug.Log("MarketController::GetProbability Error: Resource not found!");
+        return 0;
+    }
+    public float GetScarcity(string name)
+    {
+        Resource current;
+        for(int i=0; i < resources.Count; i++)
+        {
+            current = resources[i];
+            if(current.Name() == name)
+            {
+                return current.Scarcity();
+            }
+        }
+        Debug.LogError("MarketController::GetScarcity Error: Resource not found!");
+        return 0;
     }
 }
