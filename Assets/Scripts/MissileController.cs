@@ -8,7 +8,9 @@ public class MissileController : MonoBehaviour
     private int missileHealth;
     private float missileBlastDamage;
     private float missileBlastRadius;
-    private float speed;
+    [SerializeField]
+    private float speed = 1;
+    private Transform target;
 
     public enum State
     {
@@ -16,6 +18,7 @@ public class MissileController : MonoBehaviour
         attacking,
         launching,
     }
+    [SerializeField]
     private State currentState;
 
     private Transform planetTransform;
@@ -68,8 +71,12 @@ public class MissileController : MonoBehaviour
 
     private void Attacking()
     {
-        //Point towards asteroid centre
-        //Move forwards speed*Time.deltaTime
+        if (target == null)
+        {
+            target = GameObject.Find("Planet(Clone)").transform;
+        }
+        transform.LookAt(target);//Point towards asteroid centre
+        transform.position = transform.position + (transform.forward * speed * Time.deltaTime); //Move forwards speed*Time.deltaTime
     }
     private void Launching()
     {

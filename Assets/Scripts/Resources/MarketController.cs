@@ -5,7 +5,6 @@ using UnityEngine;
 public class MarketController : MonoBehaviour
 {
     private List<Resource> resources;
-    
     public void AddResource(string name, int value, float probability, float scarcity)
     {
         Resource newResource = new Resource(name, value, probability, scarcity);
