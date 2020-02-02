@@ -77,6 +77,7 @@ public class MissileController : MonoBehaviour
         }
         transform.LookAt(target);//Point towards asteroid centre
         transform.position = transform.position + (transform.forward * speed * Time.deltaTime); //Move forwards speed*Time.deltaTime
+        CheckImpact();
     }
     private void Launching()
     {
@@ -126,5 +127,19 @@ public class MissileController : MonoBehaviour
     public void SetSpeed(float speed)
     {
         this.speed = speed;
+    }
+
+    public void CheckImpact()
+    {
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, transform.forward *0.01f , out hit))
+        {
+            if (hit.rigidbody != null && hit.distance < 0.02f)
+            {
+                Debug.Log(hit.transform.gameObject);
+                Debug.Log("Missile explodes");
+                GameObject.Destroy(this.gameObject);
+            }
+        }
     }
 }
