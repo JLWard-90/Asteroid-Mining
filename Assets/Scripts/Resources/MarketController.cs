@@ -65,4 +65,9 @@ public class MarketController : MonoBehaviour
         Debug.LogError("MarketController::GetScarcity Error: Resource not found!");
         return 0;
     }
+
+    public List<Resource> GetResourcesList()
+    {
+        return resources;
+    }
 }

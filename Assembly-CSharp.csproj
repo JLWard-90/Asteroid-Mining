@@ -95,6 +95,7 @@
     <Compile Include="Assets\Scripts\Players\Player.cs" />
     <Compile Include="Assets\Scripts\Players\PlayersManager.cs" />
     <Compile Include="Assets\Scripts\Resources\MarketController.cs" />
+    <Compile Include="Assets\Scripts\Resources\PlanetResourceManager.cs" />
     <Compile Include="Assets\Scripts\Resources\Resource.cs" />
     <Compile Include="Assets\Scripts\StategicOverviewController.cs" />
     <Compile Include="Assets\Scripts\astRepControl.cs" />
