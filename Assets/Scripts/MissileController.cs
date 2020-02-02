@@ -10,6 +10,8 @@ public class MissileController : MonoBehaviour
     private float missileBlastRadius;
     [SerializeField]
     private float speed = 1;
+    [SerializeField]
+    GameObject explosionPrefab;
     private Transform target;
 
     public enum State
@@ -138,6 +140,15 @@ public class MissileController : MonoBehaviour
             {
                 Debug.Log(hit.transform.gameObject);
                 Debug.Log("Missile explodes");
+                if (explosionPrefab != null)
+                {
+                    GameObject newExplosion = GameObject.Instantiate(explosionPrefab);
+                    newExplosion.transform.position = transform.position;
+                }
+                else
+                {
+                    Debug.Log("MissileController::CheckImpact -- Explosion prefab missing!");
+                }
                 GameObject.Destroy(this.gameObject);
             }
         }

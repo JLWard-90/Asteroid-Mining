@@ -45,6 +45,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
+  explosionPrefab: {fileID: 2785845326793201718, guid: c0f97e514cb09a243b2d89d356f7217c,
+    type: 3}
   currentState: 0
 --- !u!1001 &7947821163140142965
 PrefabInstance:
