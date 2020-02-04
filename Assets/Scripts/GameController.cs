@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
-
+    CameraManager cameraManager;
     public static GameController instance;
     void Awake()
     {
@@ -23,11 +23,28 @@ public class GameController : MonoBehaviour
         //don't destroy on changing scene
         DontDestroyOnLoad(gameObject);
     }
+    private void Start()
+    {
+        cameraManager = this.gameObject.GetComponent<CameraManager>();
+    }
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             Application.Quit();
+        }
+        if (Input.GetKeyDown(KeyCode.N))
+        {
+            Debug.Log("pressed N");
+            if(cameraManager == null)
+            {
+                cameraManager = this.gameObject.GetComponent<CameraManager>();
+            }
+            if (cameraManager != null)
+            {
+                Debug.Log("Next camera");
+                cameraManager.OnNextCamera();
+            }
         }
     }
     void LoadFromSave()

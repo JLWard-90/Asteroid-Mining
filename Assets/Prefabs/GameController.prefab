@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8950718326449288805}
   - component: {fileID: 8950718326449288804}
   - component: {fileID: 8950718326449288807}
+  - component: {fileID: 3618644654764351429}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -65,7 +66,7 @@ MonoBehaviour:
   humanPlayerPrefab: {fileID: 5080538862494082522, guid: d3677d67d282c614190337463c724ead,
     type: 3}
   thePlayers: []
-  numberOfPlayers: 0
+  numberOfAIPlayers: 0
   startingCash: 0
 --- !u!114 &8950718326449288804
 MonoBehaviour:
@@ -94,8 +95,23 @@ MonoBehaviour:
   numberOfAsteroids: 10
   AsteroidSeeds: 
   asteroids: []
+  planets: []
   xdim: {x: -4, y: 4}
   ydim: {x: -6, y: 6}
   astRepZpos: 0
   asteroidRepPrefab: {fileID: 362190264243968782, guid: 060cc23de64d3754db2001fe6e26932d,
     type: 3}
+  shiftLength: -10000
+  astRepList: []
+--- !u!114 &3618644654764351429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8950718326449288808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9be81d39250975a4ca588a74468cf8b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

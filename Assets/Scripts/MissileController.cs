@@ -13,7 +13,7 @@ public class MissileController : MonoBehaviour
     [SerializeField]
     GameObject explosionPrefab;
     private Transform target;
-
+    public Camera missileCamera;
     public enum State
     {
         idle,
@@ -43,6 +43,13 @@ public class MissileController : MonoBehaviour
         if(transform.parent != planetTransform)
         {
             transform.SetParent(planetTransform);//Set the planet transform to be the parent of the missile
+        }
+        missileCamera = this.gameObject.GetComponentInChildren<Camera>();
+        missileCamera.enabled = false;
+        CameraManager cameraManager = GameObject.Find("GameController").GetComponent<CameraManager>();
+        if (cameraManager != null)
+        {
+            cameraManager.AddCamera(missileCamera);
         }
     }
 
