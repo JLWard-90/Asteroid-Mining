@@ -72,6 +72,7 @@
     <Compile Include="Assets\Scripts\BuildingSystem\BuildingManager.cs" />
     <Compile Include="Assets\Scripts\BuildingSystem\BuildingPlacement.cs" />
     <Compile Include="Assets\Scripts\CameraController.cs" />
+    <Compile Include="Assets\Scripts\CameraManager.cs" />
     <Compile Include="Assets\Scripts\GameController.cs" />
     <Compile Include="Assets\Scripts\LevelController.cs" />
     <Compile Include="Assets\Scripts\MissileController.cs" />
