@@ -46,6 +46,10 @@ public class GameController : MonoBehaviour
                 cameraManager.OnNextCamera();
             }
         }
+        if (Input.GetKeyDown(KeyCode.O))
+        {
+            GameObject.Find("NavigationManager").GetComponent<NavManager>().GoToStrategicOverlay();
+        }
     }
     void LoadFromSave()
     {

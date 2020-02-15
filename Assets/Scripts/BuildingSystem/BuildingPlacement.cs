@@ -9,9 +9,10 @@ public class BuildingPlacement : MonoBehaviour
     private Transform currentBuilding;
     private Planet planet;
     private Player humanPlayer;
+    NavManager navManager;
     void Start()
     {
-        NavManager navManager = GameObject.Find("NavigationManager").GetComponent<NavManager>();
+        navManager = GameObject.Find("NavigationManager").GetComponent<NavManager>();
         if (navManager.getSceneName() == "AsteroidScene")
         {
             planet = GameObject.Find("Planet(Clone)").GetComponent<Planet>();
@@ -25,6 +26,7 @@ public class BuildingPlacement : MonoBehaviour
 
     public void GetPlanet()
     {
+        planet = GameObject.Find("GameController").GetComponent<AsteroidManager>().planets[navManager.selectedAsteroidIndex].GetComponent<Planet>();
         if(planet == null)
         {
             planet = GameObject.Find("Planet(Clone)").GetComponent<Planet>();
@@ -72,6 +74,10 @@ public class BuildingPlacement : MonoBehaviour
 
     void AttemptBuild(RaycastHit hit)
     {
+        if (planet == null)
+        {
+            GetPlanet();
+        }
         if (CheckOnGround(hit.point, planet))
         {
             if (humanPlayer.getCash() > currentBuilding.GetComponent<Building>().buildingCost)

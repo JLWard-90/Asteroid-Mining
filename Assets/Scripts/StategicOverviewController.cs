@@ -71,8 +71,8 @@ public class StategicOverviewController : MonoBehaviour
                 //Set selected asteroid in navigation controller to that asteroid rep's index
                 int asteroidIndex = hit.collider.gameObject.GetComponent<astRepControl>().index;
                 navManager.selectedAsteroidIndex = asteroidIndex;
-                astManager.astRepList[asteroidIndex].GetComponent<astRepControl>().OnSelect(hit.collider.gameObject.GetComponentInChildren<SpriteRenderer>().color);
                 navManager.LoadAsteroidView();
+                astManager.astRepList[asteroidIndex].GetComponent<astRepControl>().OnSelect(hit.collider.gameObject.GetComponentInChildren<SpriteRenderer>().color);
             }
         }
     }

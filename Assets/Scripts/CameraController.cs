@@ -17,16 +17,16 @@ public class CameraController : MonoBehaviour
     public float zoomDist = 3;
     private void Start()
     {
-        if(focusPlanet == null)
-        {
-            focusPlanet = GameObject.Find("Planet(Clone)");
-        }
+
     }
     private void Update()
     {
-        RotateHandler(focusPlanet);
-        ZoomHandler();
-        PointToFocus(focusPlanet);
+        if (focusPlanet != null)
+        {
+            RotateHandler(focusPlanet);
+            ZoomHandler();
+            PointToFocus(focusPlanet);
+        }
     }
 
     private void RotateHandler(GameObject focus) //Handler to pan the camera around the asteroid
@@ -79,6 +79,11 @@ public class CameraController : MonoBehaviour
     {
         Vector3 focusPosition = focus.transform.position;
         transform.position = focusPosition - transform.forward * zoomDist;
+    }
+
+    public void SetFocusPlanet(GameObject planet)
+    {
+        focusPlanet = planet;
     }
 
 }

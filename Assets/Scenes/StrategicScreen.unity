@@ -20,11 +20,11 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 1024, g: 1024, b: 1024, a: 1}
+  m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
-  m_AmbientIntensity: 4.84
-  m_AmbientMode: 3
+  m_AmbientIntensity: 1
+  m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
   m_HaloStrength: 0.5
@@ -50,9 +50,9 @@ LightmapSettings:
     m_BounceScale: 1
     m_IndirectOutputScale: 1
     m_AlbedoBoost: 1
-    m_EnvironmentLightingMode: 1
+    m_EnvironmentLightingMode: 0
     m_EnableBakedLightmaps: 1
-    m_EnableRealtimeLightmaps: 1
+    m_EnableRealtimeLightmaps: 0
   m_LightmapEditorSettings:
     serializedVersion: 12
     m_Resolution: 2
@@ -71,7 +71,7 @@ LightmapSettings:
     m_FinalGatherFiltering: 1
     m_FinalGatherRayCount: 256
     m_ReflectionCompression: 2
-    m_MixedBakeMode: 1
+    m_MixedBakeMode: 2
     m_BakeBackend: 1
     m_PVRSampling: 1
     m_PVRDirectSampleCount: 32
@@ -121,6 +121,12 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &90461806 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5149731990691590057, guid: df548939669bcea4c86c9d6d9d666d5d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1967888862}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &329882783
 GameObject:
   m_ObjectHideFlags: 0
@@ -203,8 +209,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8566980858067777841, guid: 1d275436938982f4b9c134a8f58bf0e0,
-          type: 3}
+      - m_Target: {fileID: 832537865}
         m_MethodName: LoadAsteroidView
         m_Mode: 1
         m_Arguments:
@@ -394,6 +399,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &832537865 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8566980858067777841, guid: 1d275436938982f4b9c134a8f58bf0e0,
+    type: 3}
+  m_PrefabInstance: {fileID: 8566980858388555587}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3cf913d132ec5f4191c8d66c2861c92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1146013299
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -419,7 +436,7 @@ PrefabInstance:
     - target: {fileID: 8950718326449288807, guid: f99790347c81d804a948152e351e826e,
         type: 3}
       propertyPath: numberOfAsteroids
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8950718326449288807, guid: f99790347c81d804a948152e351e826e,
         type: 3}
@@ -557,7 +574,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.009433985, g: 0.009433985, b: 0.009433985, a: 0}
+  m_BackGroundColor: {r: 0.21698111, g: 0.21698111, b: 0.21698111, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -989,6 +1006,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8566980858067777841, guid: 1d275436938982f4b9c134a8f58bf0e0,
+        type: 3}
+      propertyPath: asteroidCameraObject
+      value: 
+      objectReference: {fileID: 90461806}
+    - target: {fileID: 8566980858067777841, guid: 1d275436938982f4b9c134a8f58bf0e0,
+        type: 3}
+      propertyPath: StrategicViewCameraObject
+      value: 
+      objectReference: {fileID: 1439643656}
+    - target: {fileID: 8566980858067777841, guid: 1d275436938982f4b9c134a8f58bf0e0,
+        type: 3}
+      propertyPath: asteroidManager
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8566980858067777842, guid: 1d275436938982f4b9c134a8f58bf0e0,
         type: 3}

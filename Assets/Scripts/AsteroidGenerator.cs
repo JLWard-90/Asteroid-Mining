@@ -59,6 +59,5 @@ public class AsteroidGenerator : MonoBehaviour
             GenerateAsteroid(i);
             Debug.Log(string.Format("Asteroid {0} generated", i));
         }
-        Debug.Log(Time.deltaTime);
     }
 }
