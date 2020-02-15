@@ -13,7 +13,7 @@ public class AsteroidGenerator : MonoBehaviour
         asteroidManager = this.gameObject.GetComponent<AsteroidManager>();
         gameController = this.gameObject.GetComponent<GameController>();
     }
-    public void GenerateAsteroid(int asteroidIndex)
+    private void GenerateAsteroid(int asteroidIndex)
     {
         bool asteroidPreviouslyGenerated = asteroidManager.asteroids[asteroidIndex].prevgenerated;
         if (asteroidPreviouslyGenerated)
@@ -32,5 +32,14 @@ public class AsteroidGenerator : MonoBehaviour
         }
         newPlanet.transform.SetParent(gameController.transform);
         asteroidManager.planets[asteroidIndex] = newPlanet;
+    }
+
+    public void GenerateAsteroids()
+    {
+        int nAsteroids = asteroidManager.numberOfAsteroids;
+        for (int i = 0; i < nAsteroids; i++)
+        {
+            GenerateAsteroid(i);
+        }
     }
 }
