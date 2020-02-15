@@ -419,7 +419,7 @@ PrefabInstance:
     - target: {fileID: 8950718326449288807, guid: f99790347c81d804a948152e351e826e,
         type: 3}
       propertyPath: numberOfAsteroids
-      value: 100
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8950718326449288807, guid: f99790347c81d804a948152e351e826e,
         type: 3}
@@ -807,6 +807,11 @@ PrefabInstance:
     - target: {fileID: 5149731990691590060, guid: df548939669bcea4c86c9d6d9d666d5d,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5149731990691590061, guid: df548939669bcea4c86c9d6d9d666d5d,
+        type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

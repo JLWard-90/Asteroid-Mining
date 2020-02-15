@@ -162,6 +162,15 @@
     <Reference Include="UnityEditor.UI">
       <HintPath>C:/Users/jakel/Documents/GitHub/Asteroid-Mining/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.EditorCoroutines.Editor">
+      <HintPath>C:/Users/jakel/Documents/GitHub/Asteroid-Mining/Library/ScriptAssemblies/Unity.EditorCoroutines.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.MemoryProfiler">
+      <HintPath>C:/Users/jakel/Documents/GitHub/Asteroid-Mining/Library/ScriptAssemblies/Unity.MemoryProfiler.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.MemoryProfiler.Editor">
+      <HintPath>C:/Users/jakel/Documents/GitHub/Asteroid-Mining/Library/ScriptAssemblies/Unity.MemoryProfiler.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/2019.3.0f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
     </Reference>
