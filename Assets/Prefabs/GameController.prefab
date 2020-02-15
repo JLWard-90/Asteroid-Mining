@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8950718326449288804}
   - component: {fileID: 8950718326449288807}
   - component: {fileID: 3618644654764351429}
+  - component: {fileID: 5965950080164529217}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -115,3 +116,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9be81d39250975a4ca588a74468cf8b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cameras: []
+--- !u!114 &5965950080164529217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8950718326449288808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1029db38ddbbb4d49833eef9189b5930, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  planetPrefab: {fileID: 4288440070150306798, guid: 1b889a27372465449af08120b46eb4fa,
+    type: 3}
