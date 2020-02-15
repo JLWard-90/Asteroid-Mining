@@ -40,6 +40,7 @@ public class AsteroidGenerator : MonoBehaviour
         for (int i = 0; i < nAsteroids; i++)
         {
             GenerateAsteroid(i);
+            Debug.Log(string.Format("Asteroid {0} generated", i));
         }
     }
 }

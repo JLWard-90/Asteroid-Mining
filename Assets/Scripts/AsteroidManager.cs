@@ -17,8 +17,11 @@ public class AsteroidManager : MonoBehaviour
     [SerializeField]
     float shiftLength = -10000; //An arbitrary length to shift the strategic overlay components away from the camera when not in use
     public List<GameObject> astRepList = new List<GameObject>();
+    //For new AsteroidInStratigicScene generation:
+    AsteroidGenerator asteroidGenerator;
     private void Start()
     {
+        asteroidGenerator = this.gameObject.GetComponent<AsteroidGenerator>();
         asteroids = new List<Asteroid>();
         AsteroidSeeds = new List<int>();
         for(int i=0;i<numberOfAsteroids;i++)
@@ -27,6 +30,13 @@ public class AsteroidManager : MonoBehaviour
             AddNewAsteroid(astPosition.x, astPosition.y);
             InitAsteroidRep(i);
         }
+        if (asteroidGenerator == null)
+        {
+            Debug.Log("Error in AsteroidManager::Start() : asteroidGenerator not found!");
+            return;
+        }
+        Debug.Log("Generating asteroids...");
+        asteroidGenerator.GenerateAsteroids(); //Generate the asteroids
     }
 
     void AddNewAsteroid(float posX, float posY)
