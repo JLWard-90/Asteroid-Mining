@@ -60,10 +60,10 @@ public class NavManager : MonoBehaviour
         }
         StrategicViewCameraObject.GetComponent<Camera>().enabled = false;
         StrategicViewCameraObject.GetComponent<AudioListener>().enabled = false;
-        asteroidCameraObject.GetComponent<Camera>().enabled = true;
-        asteroidCameraObject.GetComponent<AudioListener>().enabled = true;
         asteroidCameraObject.GetComponent<CameraController>().enabled = true;
         asteroidCameraObject.GetComponent<CameraController>().SetFocusPlanet(asteroidManager.planets[selectedAsteroidIndex]);
+        asteroidCameraObject.GetComponent<Camera>().enabled = true;
+        asteroidCameraObject.GetComponent<AudioListener>().enabled = true;
         Debug.Log("Loading asteroid view");
         Debug.Log(selectedAsteroidIndex);
     }
