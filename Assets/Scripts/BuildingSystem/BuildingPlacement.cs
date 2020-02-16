@@ -74,6 +74,7 @@ public class BuildingPlacement : MonoBehaviour
 
     void AttemptBuild(RaycastHit hit)
     {
+        planet = GameObject.Find("AsteroidCamera").GetComponent<CameraController>().focusPlanet.GetComponent<Planet>();
         if (planet == null)
         {
             GetPlanet();
@@ -93,6 +94,7 @@ public class BuildingPlacement : MonoBehaviour
 
     Transform PlaceBuilding(Transform currentBuilding, Transform hitTransform)
     {
+
         currentBuilding.SetParent(hitTransform);
         currentBuilding.GetComponent<Building>().buildingOwner = humanPlayer;
         currentBuilding = null;        
