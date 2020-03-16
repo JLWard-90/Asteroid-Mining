@@ -50,6 +50,9 @@ ScriptsOnlyBuild:
     - UnityEngine.Rendering.Universal.UniversalAdditionalCameraData
     - UnityEngine.Rendering.Universal.UniversalRenderPipelineAsset
     - UnityEngine.Rendering.Universal.UniversalRenderPipelineEditorResources
+    Unity.UI.Builder.Editor.dll:
+    - Unity.UI.Builder.Builder
+    - Unity.UI.Builder.BuilderDocument
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
@@ -104,121 +107,121 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11352}
+      Script: {instanceID: 11326}
     - Class: 114
-      Script: {instanceID: 11466}
+      Script: {instanceID: 11442}
     - Class: 114
-      Script: {instanceID: 11498}
+      Script: {instanceID: 11474}
     - Class: 114
-      Script: {instanceID: 11510}
+      Script: {instanceID: 11488}
     - Class: 114
-      Script: {instanceID: 11588}
+      Script: {instanceID: 11570}
     - Class: 114
-      Script: {instanceID: 11612}
+      Script: {instanceID: 11596}
     - Class: 114
-      Script: {instanceID: 11716}
+      Script: {instanceID: 11704}
     - Class: 114
-      Script: {instanceID: 11720}
+      Script: {instanceID: 11708}
     - Class: 114
-      Script: {instanceID: 11792}
+      Script: {instanceID: 11780}
     - Class: 114
-      Script: {instanceID: 11802}
+      Script: {instanceID: 11790}
     - Class: 114
-      Script: {instanceID: 11842}
+      Script: {instanceID: 11832}
     - Class: 114
-      Script: {instanceID: 11988}
+      Script: {instanceID: 11984}
     - Class: 114
-      Script: {instanceID: 12024}
+      Script: {instanceID: 12026}
     - Class: 114
-      Script: {instanceID: 12328}
+      Script: {instanceID: 12356}
     - Class: 114
-      Script: {instanceID: 12376}
+      Script: {instanceID: 12404}
     - Class: 114
-      Script: {instanceID: 12442}
+      Script: {instanceID: 12474}
     - Class: 114
-      Script: {instanceID: 12566}
+      Script: {instanceID: 12608}
     - Class: 114
-      Script: {instanceID: 12678}
+      Script: {instanceID: 12726}
     - Class: 114
-      Script: {instanceID: 12770}
+      Script: {instanceID: 12818}
     - Class: 114
-      Script: {instanceID: 12820}
+      Script: {instanceID: 12870}
     - Class: 114
-      Script: {instanceID: 12900}
+      Script: {instanceID: 12954}
     - Class: 114
-      Script: {instanceID: 12946}
+      Script: {instanceID: 13002}
     - Class: 114
-      Script: {instanceID: 12966}
+      Script: {instanceID: 13022}
     - Class: 114
-      Script: {instanceID: 12978}
+      Script: {instanceID: 13034}
     - Class: 114
-      Script: {instanceID: 13008}
+      Script: {instanceID: 13070}
     - Class: 114
-      Script: {instanceID: 13130}
+      Script: {instanceID: 13204}
     - Class: 114
-      Script: {instanceID: 13156}
+      Script: {instanceID: 13230}
     - Class: 114
-      Script: {instanceID: 13322}
+      Script: {instanceID: 13410}
     - Class: 114
-      Script: {instanceID: 13416}
+      Script: {instanceID: 13506}
     - Class: 114
-      Script: {instanceID: 13448}
+      Script: {instanceID: 13538}
     - Class: 114
-      Script: {instanceID: 13552}
+      Script: {instanceID: 13654}
     - Class: 114
-      Script: {instanceID: 13582}
+      Script: {instanceID: 13684}
     - Class: 114
-      Script: {instanceID: 13610}
+      Script: {instanceID: 13716}
     - Class: 114
-      Script: {instanceID: 13696}
+      Script: {instanceID: 13808}
     - Class: 114
-      Script: {instanceID: 13742}
+      Script: {instanceID: 13858}
     - Class: 114
-      Script: {instanceID: 13810}
+      Script: {instanceID: 13928}
     - Class: 114
-      Script: {instanceID: 13830}
+      Script: {instanceID: 13950}
     - Class: 114
-      Script: {instanceID: 13958}
+      Script: {instanceID: 14084}
     - Class: 114
-      Script: {instanceID: 13992}
+      Script: {instanceID: 14120}
     - Class: 114
-      Script: {instanceID: 14002}
+      Script: {instanceID: 14130}
     - Class: 114
-      Script: {instanceID: 14320}
+      Script: {instanceID: 14464}
     - Class: 114
-      Script: {instanceID: 14338}
+      Script: {instanceID: 14482}
     - Class: 114
-      Script: {instanceID: 14392}
+      Script: {instanceID: 14542}
     - Class: 114
-      Script: {instanceID: 14490}
+      Script: {instanceID: 14644}
     - Class: 114
-      Script: {instanceID: 14544}
+      Script: {instanceID: 14704}
     - Class: 114
-      Script: {instanceID: 14638}
+      Script: {instanceID: 14800}
     - Class: 114
-      Script: {instanceID: 14716}
+      Script: {instanceID: 14890}
     - Class: 114
-      Script: {instanceID: 14828}
+      Script: {instanceID: 15010}
     - Class: 114
-      Script: {instanceID: 14878}
+      Script: {instanceID: 15060}
     - Class: 114
-      Script: {instanceID: 14988}
+      Script: {instanceID: 15178}
     - Class: 114
-      Script: {instanceID: 15022}
+      Script: {instanceID: 15220}
     - Class: 114
-      Script: {instanceID: 15102}
+      Script: {instanceID: 15304}
     - Class: 114
-      Script: {instanceID: 15104}
+      Script: {instanceID: 15306}
     - Class: 114
-      Script: {instanceID: 15132}
+      Script: {instanceID: 15334}
     - Class: 114
-      Script: {instanceID: 15156}
+      Script: {instanceID: 15358}
     - Class: 114
-      Script: {instanceID: 15160}
+      Script: {instanceID: 15362}
     - Class: 114
-      Script: {instanceID: 15280}
+      Script: {instanceID: 15486}
     - Class: 114
-      Script: {instanceID: 15286}
+      Script: {instanceID: 15492}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -238,12 +241,6 @@ ScriptsOnlyBuild:
     - Class: 224
       Script: {instanceID: 0}
   scriptHashData:
-  - hash:
-      serializedVersion: 2
-      Hash: 090a3c84271bd169fd6977e6879c7c00
-    assemblyName: Unity.RenderPipelines.Universal.Runtime.dll
-    namespaceName: UnityEngine.Rendering.Universal
-    className: UniversalRenderPipelineAsset
   - hash:
       serializedVersion: 2
       Hash: a1f19ad47d3094e235f21b74dfc423a8
@@ -640,6 +637,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ShapeSettings
+  - hash:
+      serializedVersion: 2
+      Hash: 090a3c84271bd169fd6977e6879c7c00
+    assemblyName: Unity.RenderPipelines.Universal.Runtime.dll
+    namespaceName: UnityEngine.Rendering.Universal
+    className: UniversalRenderPipelineAsset
   - hash:
       serializedVersion: 2
       Hash: 1eba9adea13eac3002756dbdfd16f61e

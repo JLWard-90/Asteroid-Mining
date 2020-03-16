@@ -130,6 +130,9 @@
     <Reference Include="Unity.RenderPipelines.Core.ShaderLibrary">
       <HintPath>C:/Users/jakel/Documents/GitHub/Asteroid-Mining/Library/ScriptAssemblies/Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.UI.Builder.Editor">
+      <HintPath>C:/Users/jakel/Documents/GitHub/Asteroid-Mining/Library/ScriptAssemblies/Unity.UI.Builder.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.TextMeshPro">
       <HintPath>C:/Users/jakel/Documents/GitHub/Asteroid-Mining/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
@@ -138,9 +141,6 @@
     </Reference>
     <Reference Include="Unity.MemoryProfiler.Editor">
       <HintPath>C:/Users/jakel/Documents/GitHub/Asteroid-Mining/Library/ScriptAssemblies/Unity.MemoryProfiler.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.UI.Builder.Editor">
-      <HintPath>C:/Users/jakel/Documents/GitHub/Asteroid-Mining/Library/ScriptAssemblies/Unity.UI.Builder.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/2019.3.0f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
